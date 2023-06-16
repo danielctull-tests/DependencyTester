@@ -5,16 +5,34 @@ import PackageDescription
 let package = Package(
     name: "DependencyTester",
     products: [
-        .library(name: "DependencyTester", targets: ["DependencyTester"]),
+        .library(name: "A", targets: ["A"]),
+        .library(name: "B", targets: ["B"]),
+        .library(name: "C", targets: ["C"]),
     ],
     targets: [
 
         .target(
-          name: "DependencyTester",
-          dependencies: []),
+            name: "A",
+            dependencies: []),
 
         .testTarget(
-            name: "DependencyTesterTests",
-            dependencies: ["DependencyTester"]),
+            name: "ATests",
+            dependencies: ["A"]),
+
+        .target(
+            name: "B",
+            dependencies: []),
+
+        .testTarget(
+            name: "BTests",
+            dependencies: ["B"]),
+
+        .target(
+            name: "C",
+            dependencies: []),
+
+        .testTarget(
+            name: "CTests",
+            dependencies: ["C"]),
     ]
 )
