@@ -13,7 +13,7 @@ let package = Package(
 
         .target(
             name: "A",
-            dependencies: []),
+            dependencies: ["B"]),
 
         .testTarget(
             name: "ATests",
